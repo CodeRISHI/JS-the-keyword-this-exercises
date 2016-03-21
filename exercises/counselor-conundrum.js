@@ -6,10 +6,7 @@ var eighthFloorCounselor = {
 };
 
 var sixthFloorCounselor = {
-  name: 'Tara',
-  say: function(phrase) {
-    console.log(this.name + ' says: ' + phrase);
-  }
+  name: 'Tara'
 };
 
 
@@ -21,6 +18,6 @@ eighthFloorCounselor.say('Unicornado!');
 
 // How would we modify this invocation of .say so that Tara 
 // says 'Velociraptacular!' instead of Pamela?
-  //We would add the 'say' method to the sixthFloorCounselor object to get it to use the correct name - Tara.
+  //We would need to use 'call' on the '.say' method to get it from the eigthFloorCounselor object and then pass in the sixthFloorCounselor object along with the phrase 'Velociraptacular' for it to log the correct name ('Tara') with the phrase.
   //This would now log: "Tara says: Velociraptacular!"
-sixthFloorCounselor.say('Velociraptacular!');
+eighthFloorCounselor.say.call(sixthFloorCounselor, 'Velociraptacular!');
